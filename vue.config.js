@@ -2,7 +2,7 @@ const path = require('path')
 const debug = process.env.NODE_ENV !== 'production'
 
 module.exports = {
-    //baseUrl: '/', // 根域上下文目录
+    baseUrl: '/', // 根域上下文目录
     outputDir: 'dist', // 构建输出目录
     assetsDir: 'assets', // 静态资源目录 (js, css, img, fonts)
     lintOnSave: false, // 是否开启eslint保存检测，有效值：ture | false | 'error'
@@ -25,11 +25,11 @@ module.exports = {
         // })
     },
     chainWebpack: config => { // webpack链接API，用于生成和修改webapck配置，https://github.com/vuejs/vue-cli/blob/dev/docs/webpack.md
-        // if (debug) {
-        //     // 本地开发配置
-        // } else {
-        //     // 生产开发配置
-        //}
+        if (debug) {
+            // 本地开发配置
+        } else {
+            // 生产开发配置
+        }
     },
     parallel: require('os').cpus().length > 1, // 构建时开启多进程处理babel编译
     pluginOptions: { // 第三方插件配置
